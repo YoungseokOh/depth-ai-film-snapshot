@@ -1,0 +1,61 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nextchip Depth AI Film</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&family=IBM+Plex+Sans+KR:wght@400;500&display=swap">
+<style>
+/* Layout: a screening room. One film, edge to edge on a navy ground taken from the film's own end card;
+   the wordmark above it and one caption line below, nothing else. Single dark look by design. */
+:root {
+  color-scheme: dark;
+  --ground: #0a111d;      /* the film's end-card navy */
+  --ground-hi: #13203a;   /* the vignette's lit centre */
+  --ink: #e6e9ef;
+  --ink-dim: #9aa3b2;
+  --frame: #1d2a40;
+  --display: "Ubuntu", "IBM Plex Sans KR", system-ui, sans-serif;
+  --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  /* the depth colour scale of every panel in the film: red near, blue far */
+  --depth: linear-gradient(90deg, #7a0403, #e4460a, #fbb938, #a4fc3c, #1ae4b6, #3e9bfe, #30123b);
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(120% 90% at 50% 40%, var(--ground-hi), var(--ground) 70%) fixed, var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: clamp(20px, 4vh, 48px);
+  display: flex; flex-direction: column; align-items: center;
+}
+.room { width: min(100%, 1280px); display: flex; flex-direction: column; gap: clamp(14px, 2.4vh, 24px); }
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.mark { font-family: var(--display); font-weight: 700; letter-spacing: 0.32em; font-size: clamp(15px, 1.6vw, 19px); }
+.what { font-family: var(--display); font-weight: 500; color: var(--ink-dim); font-size: clamp(14px, 1.4vw, 17px); letter-spacing: 0.02em; }
+.screen { position: relative; border-radius: 6px; overflow: hidden; background: #000;
+  box-shadow: 0 0 0 1px var(--frame), 0 30px 80px -30px rgba(0, 0, 0, 0.8); }
+video { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.scale { height: 3px; border-radius: 2px; background: var(--depth); opacity: 0.9; width: min(46%, 520px); margin: 0 auto; }
+.caption { text-align: center; color: var(--ink-dim); font-size: 14px; letter-spacing: 0.02em; margin: 0; }
+.caption b { color: var(--ink); font-weight: 500; }
+video:focus-visible { outline: 2px solid #3e9bfe; outline-offset: 3px; }
+</style>
+</head><body>
+<main class="room">
+  <header>
+    <span class="mark">NEXTCHIP</span>
+    <span class="what">Depth AI</span>
+  </header>
+  <div class="screen">
+    <video id="film" controls playsinline preload="metadata" poster="poster.jpg">
+      <source src="film.mp4" type="video/mp4">
+      <source src="film.webm" type="video/webm">
+    </video>
+  </div>
+  <div class="scale" aria-hidden="true"></div>
+  <p class="caption"><b>Dense depth. On-device. Real time.</b> · 실내 로봇용 깊이 AI · 98초</p>
+</main>
+</body></html>
