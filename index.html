@@ -3,7 +3,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap">
 <style>
 /* Layout: a screening room. One film, edge to edge on a navy ground taken from the film's own end card;
    the Nextchip logo top left and one title top right, nothing else. Single dark look by design. */
@@ -30,7 +30,7 @@ body {
 }
 .room { width: min(100%, 1280px); display: flex; flex-direction: column; gap: clamp(14px, 2.4vh, 24px); }
 header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.what { font-family: "Ubuntu", system-ui, sans-serif; font-weight: 500; color: var(--ink-dim); font-size: clamp(13px, 1.4vw, 17px); letter-spacing: 0.02em; white-space: nowrap; }
+.what { font-family: "Sora", system-ui, sans-serif; font-weight: 600; color: var(--ink); font-size: clamp(16px, 1.8vw, 23px); letter-spacing: 0.03em; white-space: nowrap; }
 .logo { display: block; height: clamp(24px, 3vw, 36px); width: auto; }
 .screen { position: relative; border-radius: 6px; overflow: hidden; background: #000;
   box-shadow: 0 0 0 1px var(--frame), 0 30px 80px -30px rgba(0, 0, 0, 0.8); }
@@ -41,7 +41,7 @@ video:focus-visible { outline: 2px solid #3e9bfe; outline-offset: 3px; }
 <main class="room">
   <header>
     <img class="logo" src="logo.png" alt="nextchip">
-    <span class="what">Depth AI Demo Video</span>
+    <span class="what">Depth AI</span>
   </header>
   <div class="screen">
     <video id="film" controls playsinline preload="metadata" poster="poster.jpg">
